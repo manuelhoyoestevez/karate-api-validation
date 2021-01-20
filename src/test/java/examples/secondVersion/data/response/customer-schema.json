@@ -1,0 +1,8 @@
+{
+  "id": "#notnull",
+  "nombres": "#string",
+  "apellido": "#string",
+  "direccion": "#string",
+  "cod_postal": "#string",
+  "telefono": "#string"
+}
