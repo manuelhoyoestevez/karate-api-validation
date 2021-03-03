@@ -1,0 +1,7 @@
+{
+  "nombres": "#(resource.nombres)",
+  "apellido": "#(resource.apellido)",
+  "direccion": "#(resource.direccion)",
+  "cod_postal": "#(resource.codPostal)",
+  "telefono": "#(resource.telefono)"
+}
