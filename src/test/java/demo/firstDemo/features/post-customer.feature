@@ -1,10 +1,14 @@
 Feature: Tests for the method POST
 
+  Background:
+    * def urlApi = 'https://api-irso.herokuapp.com'
+
+  @first-demo
   Scenario: Create resource
     * def new_resource = { nombres: 'nestor', apellido: 'ramos', direccion: 'baires 100', cod_postal: '28019', telefono: '123456789'}
 
     # Create resource
-    Given url 'https://api-irso.herokuapp.com'
+    Given url urlApi
     And path 'clientes'
     And request new_resource
     When method post
@@ -12,7 +16,7 @@ Feature: Tests for the method POST
     * def id = response.id
 
     # Validate resource
-    * url 'https://api-irso.herokuapp.com'
+    * url urlApi
     * path 'clientes', id
     * method get
     * status 200

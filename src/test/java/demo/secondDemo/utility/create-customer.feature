@@ -1,7 +1,8 @@
 Feature: Utility
 
+  @ignore
   Scenario: Utility Create resource
-    * url urlApi
+    * url urlApiConfig
     * path 'clientes'
     * request request_body
     * method post
@@ -9,7 +10,7 @@ Feature: Utility
     * def id = response.id
 
     # Validation
-    * url urlApi
+    * url urlApiConfig
     * path 'clientes', id
     * method get
     * status 200

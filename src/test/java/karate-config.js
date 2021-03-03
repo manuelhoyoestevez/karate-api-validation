@@ -6,7 +6,7 @@ function fn() {
   }
   var config = {
     env: env,
-	myVarName: 'someValue'
+	urlApiConfig: 'https://api-irso.herokuapp.com'
   }
   if (env == 'dev') {
     // customize
