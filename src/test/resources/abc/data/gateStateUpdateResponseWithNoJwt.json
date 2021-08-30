@@ -1,0 +1,9 @@
+{
+  "status": "security_error",
+  "data": null,
+  "messages": [{
+    "severity": "error",
+    "message": "unauthorized_operation",
+    "field": null
+  }]
+}

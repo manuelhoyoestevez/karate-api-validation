@@ -1,0 +1,9 @@
+{
+  "status": "validation_error",
+  "data": null,
+  "messages": [{
+    "severity": "error",
+    "message": "invalid_params_format",
+    "field": null
+  }]
+}

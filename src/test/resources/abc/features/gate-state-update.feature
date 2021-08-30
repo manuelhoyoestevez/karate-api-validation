@@ -7,7 +7,7 @@ Feature: Gate state update
     * def gateStateUpdateRequest = read('classpath:abc/data/gateStateUpdateRequest.json')
     * def gateStateUpdateResponse = read('classpath:abc/data/gateStateUpdateResponse.json')
 
-  Scenario: Retrieve steps OK
+  Scenario: Gate state update OK
     Given url urlApi
     And path '/abc/api/gate/state/update'
     And request gateStateUpdateRequest
@@ -16,3 +16,25 @@ Feature: Gate state update
     When method post
     Then status 200
     And match response == gateStateUpdateResponse
+
+
+  Scenario: Gate state update with no JWT
+    * def gateStateUpdateResponseWithNoJwt = read('classpath:abc/data/gateStateUpdateResponseWithNoJwt.json')
+    Given url urlApi
+    And path '/abc/api/gate/state/update'
+    And request gateStateUpdateRequest
+    And header Content-Type = 'application/json'
+    When method post
+    Then status 200
+    And match response == gateStateUpdateResponseWithNoJwt
+
+  Scenario: Gate state update with parse error
+    * def parseErrorResponse = read('classpath:abc/data/parseErrorResponse.json')
+    Given url urlApi
+    And path '/abc/api/gate/state/update'
+    And request '{'
+    And header Content-Type = 'application/json'
+    And header Authorization = jwt
+    When method post
+    Then status 200
+    And match response == parseErrorResponse
